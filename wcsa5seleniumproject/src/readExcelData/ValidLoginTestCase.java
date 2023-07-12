@@ -10,12 +10,13 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ValidLoginTestCase {
 
-	public static void main(String[] args) throws EncryptedDocumentException, IOException {
+	public static void main(String[] args) throws EncryptedDocumentException, IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 	   WebDriver driver=new ChromeDriver();
@@ -31,7 +32,27 @@ public class ValidLoginTestCase {
 	   Cell cell = row.getCell(0);
 	   String validusername = cell.getStringCellValue();
 	   
-	   
+	   Thread.sleep(2000);
+		
+		FileInputStream fis2 = new FileInputStream("./data/ActiTimeTestData.xlsx");
+		Workbook wb1 = WorkbookFactory.create(fis2);
+		Sheet sheet1 = wb1.getSheet("validcreds");
+		Row row1 = sheet1.getRow(1);
+		Cell cell1 = row1.getCell(1);
+		String validPassword = cell1.getStringCellValue();
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.name("username")).sendKeys(validusername);
+		Thread.sleep(2000);
+		driver.findElement(By.name("pwd")).sendKeys(validPassword);
+		Thread.sleep(2000);
+		driver.findElement(By.id("loginButton")).click();
+		
+		
+		
+		
+		
 	}
 
 }
