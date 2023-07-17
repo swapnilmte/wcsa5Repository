@@ -20,7 +20,7 @@ public class Flib {
 	//it is used to read the data from excel sheet
 	public String readExcelData(String excelPath, String sheetName, int rowCount, int cellCount) throws EncryptedDocumentException, IOException
 	{
-		FileInputStream fis = new FileInputStream(excelPath);  //
+		FileInputStream fis = new FileInputStream(excelPath);  //provide the path of file
 		Workbook wb = WorkbookFactory.create(fis);  //make the file ready
 		Sheet sheet = wb.getSheet(sheetName);  //get into the sheet
 		Row row = sheet.getRow(rowCount);     //get into desired row

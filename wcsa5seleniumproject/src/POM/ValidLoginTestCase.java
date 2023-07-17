@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class ValidLoginTestCase extends BaseTest {
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		BaseTest bt = new BaseTest();
 		bt.setUp();
 		
@@ -16,6 +16,17 @@ public class ValidLoginTestCase extends BaseTest {
 //		lp.getPssTB().sendKeys(flib.readPropertyData(PROP_PATH, "Password"));
 		
 		lp.validLoginMethod(flib.readPropertyData(PROP_PATH,"Username"),flib.readPropertyData(PROP_PATH, "Password"));
+		
+		
+		
+		 // use homepage Elements create obj of HomePage POM
+//	       HomePage hp = new HomePage(driver);
+//	       hp.clickOnLogoutLink();
+		
+		Thread.sleep(2000);
+		
+		HomePage hp = new HomePage(driver);
+		hp.clickOnLogoutLink();
 	}
 
 	

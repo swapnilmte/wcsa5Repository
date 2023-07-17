@@ -26,5 +26,6 @@
 	<classpathentry kind="lib" path="jar/poi-ooxml-schemas-4.1.0.jar"/>
 	<classpathentry kind="lib" path="jar/poi-scratchpad-4.1.0.jar"/>
 	<classpathentry kind="lib" path="jar/xmlbeans-3.0.2.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
