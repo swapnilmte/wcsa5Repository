@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test parallel="tests" name="ChromeTest">
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="url" value="http://127.0.0.1/login.do;jsessionid=5xpmurh99x1a"></parameter>
+		<parameter name="Vusername" value="admin"></parameter>
+		<parameter name="Vpassword" value="manager"></parameter>
+		<classes>
+			<class name="testExecution.SelectBrowser" />
+		</classes>
+	</test> <!--
+	Test -->
+
+	<test parallel="tests" name="FirefoxTest">
+		<parameter name="browser" value="firefox"></parameter>
+		<parameter name="url" value="http://127.0.0.1/login.do;jsessionid=5xpmurh99x1a"></parameter>
+		<parameter name="Vusername" value="admin"></parameter>
+		<parameter name="Vpassword" value="manager"></parameter>
+		<classes>
+			<class name="testExecution.SelectBrowser" />
+		</classes>
+	</test>
+
+
+</suite> <!--
+Suite -->
