@@ -25,13 +25,13 @@ public class CustomListener extends BaseTest implements ITestListener {
 		
 		String failedMethod = result.getMethod().getMethodName();
 		Reporter.log("This method is failed take screenshot :"+failedMethod, true);
-		failedMethod(failedMethod);
+		failedMethodToTakeScreenshot(failedMethod);
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) 
 	{
-		Reporter.log("Test Skipped",true);
+		Reporter.log("Test Case Skipped",true);
 	}
 
 	@Override

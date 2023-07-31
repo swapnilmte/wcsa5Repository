@@ -14,6 +14,8 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.google.common.io.Files;
+
 public class BaseTest implements IAutoConstant{
 	static WebDriver driver;
 	
@@ -47,18 +49,27 @@ public class BaseTest implements IAutoConstant{
 		}
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	    driver.get(url);
 	}
 	
 	
 	
 	
-	public void failedMethod(String failedMethod)
+	public void failedMethodToTakeScreenshot(String failedMethod)
 	{
 		
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File scr = ts.getScreenshotAs(OutputType.FILE);
-		File dest = new File("./screenshots/"+failedMethod+".png");
+		File dest = new File(SCREENSHOT_PATH+failedMethod+".png");
+		try
+		{
+			Files.copy(scr, dest);
+		}
 		
+		catch(Exception e)
+		{
+			
+		}
 	}
 	
 	@AfterMethod
