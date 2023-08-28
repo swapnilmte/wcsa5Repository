@@ -16,6 +16,12 @@ public interface IAutoConstant {
 	
 	String SCREENSHOT_PATH="./screenshots/";
 	
+	String VALIDSHEET_NAME="validcreds";
+	String INVALIDSHEET_NAME="invalidcreds";
+	String MANAGERSHEET_NAME="managercreds";
+	
+	String CUST_PROSHEET="";
+	
 	
 	
 }
