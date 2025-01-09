@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WebsiteTestingDay6.TestScript06">
+      <class name="AutomationTestingAssignment.UserAccountTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="testLogin" invocation-numbers="0"/>
-          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="testLoginValidCredentials"/>
         </methods>
-      </class> <!-- WebsiteTestingDay6.TestScript06 -->
+      </class> <!-- AutomationTestingAssignment.UserAccountTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
